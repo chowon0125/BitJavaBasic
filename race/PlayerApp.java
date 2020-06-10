@@ -17,11 +17,29 @@ public class PlayerApp {
 			players[i] = player;
 	
 		}
-		
 		for(int i=0; i<players.length; i++) {
-			
 			players[i].result();
 		}
 		
-}
+		Player[] ranking = new Player[3];
+		if(players[0].getRec() < players[1].getRec()) {
+			if(players[0].getRec()<players[2].getRec()) {
+				ranking[0] = players[0];
+			}
+			else {
+				ranking[0] = players[2];
+			}
+		}
+		else {
+			if(players[1].getRec() < players[2].getRec()) {
+				ranking[0] = players[1];
+			}
+			else {
+				ranking[0] = players[2];
+			}
+		}
+		
+		System.out.println("1µîÀº " + ranking[0].getName());
+		
+	}		
 }

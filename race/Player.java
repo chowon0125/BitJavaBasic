@@ -20,10 +20,7 @@ public class Player {
 	}
 	
 	
-	void result() {
-	
+	public void result() {
 		System.out.println("이름 :" + name + "기록 :" + record);
-		
-	
 	}
-	}
+}
