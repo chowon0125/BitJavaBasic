@@ -7,13 +7,13 @@ public class StudentApp {
 		
 		for(int i=0; i<students.length; i++) {
 			Student student = new Student();
-			System.out.println("ÀÌ¸§:");
+			System.out.println("ì´ë¦„:");
 			student.setName(scanner.next());
-			System.out.println("±¹¾î:");
+			System.out.println("êµ­ì–´:");
 			student.setKor(scanner.nextInt());
-			System.out.println("¿µ¾î:");
+			System.out.println("ì˜ì–´:");
 			student.setEng(scanner.nextInt());
-			System.out.println("¼öÇÐ:");
+			System.out.println("ìˆ˜í•™:");
 			student.setMath(scanner.nextInt());
 			student.sum();
 			student.avg();

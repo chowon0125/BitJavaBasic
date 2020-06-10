@@ -9,9 +9,9 @@ public class PlayerApp {
 		for(int i=0; i<players.length; i++) {
 			
 			Player player = new Player();
-			System.out.println("ÀÌ¸§ :");
+			System.out.println("ì´ë¦„:");
 			player.setName(scanner.next());
-			System.out.println("±â·Ï :");
+			System.out.println("ê¸°ë¡:");
 			player.setRec(scanner.nextInt());
 		
 			players[i] = player;
@@ -39,7 +39,7 @@ public class PlayerApp {
 			}
 		}
 		
-		System.out.println("1µîÀº " + ranking[0].getName());
+		System.out.println("1ë“±ì€ " + ranking[0].getName());
 		
 	}		
 }

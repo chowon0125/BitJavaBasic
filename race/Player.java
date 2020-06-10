@@ -21,6 +21,6 @@ public class Player {
 	
 	
 	public void result() {
-		System.out.println("¿Ã∏ß :" + name + "±‚∑œ :" + record);
+		System.out.println("Ïù¥Î¶Ñ :" + name + "Í∏∞Î°ù :" + record);
 	}
 }

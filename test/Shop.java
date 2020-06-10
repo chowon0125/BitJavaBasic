@@ -36,6 +36,6 @@ public class Shop {
 	}
 	
 	public void result() {
-		System.out.println(name+"´Ô"+" °áÁ¦ÇÏ½Ç ÃÑ ±İ¾×Àº " + sum/10000 + "¸¸¿øÀÔ´Ï´Ù.");
+		System.out.println(name+"ë‹˜ê»˜ì„œ"+" ì§€ë¶ˆí•˜ì‹¤ ê¸ˆì•¡ì€ " + sum/10000 + "ë§Œì› ì…ë‹ˆë‹¤.");
 	}
 }

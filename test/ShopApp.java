@@ -7,13 +7,13 @@ public class ShopApp {
 		
 		for(int i=0; i<3; i++) {
 			Shop ctm = new Shop();
-			System.out.println("ÀÌ¸§ :");
+			System.out.println("ì´ë¦„ :");
 			ctm.setName(scanner.next());
-			System.out.println("Æù°¡°Ý :");
+			System.out.println("í•¸ë“œí° ê°€ê²© :");
 			ctm.setPV(scanner.nextInt());
-			System.out.println("TV°¡°Ý :");
+			System.out.println("TV ê°€ê²© :");
 			ctm.setTV(scanner.nextInt());
-			System.out.println("ÄÄÇ»ÅÍ°¡°Ý :");
+			System.out.println("ì»´í“¨í„° ê°€ê²© :");
 			ctm.setCV(scanner.nextInt());
 			ctm.sum();
 			ctms[i] = ctm;

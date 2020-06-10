@@ -43,8 +43,8 @@ public class Student {
 	}
 	
 	void result() {
-		System.out.println("ÀÌ¸§ : "+name);
-		System.out.println("ÃÑÁ¡ : "+sum);
-		System.out.println("Æò±Õ : "+avg);
+		System.out.println("ì´ë¦„ : "+name);
+		System.out.println("ì´ì  : "+sum);
+		System.out.println("í‰ê·  : "+avg);
 	}
 }

@@ -5,7 +5,7 @@ public class Person{
 	float height;
 	
 	void personStates() {
-		System.out.println("ÀÌ¸§ :"+name+", ³ªÀÌ :"+age+", Å° :"+height);
+		System.out.println("ì´ë¦„ :"+name+", ë‚˜ì´ :"+age+", í‚¤ :"+height);
 	}
 	
 }
