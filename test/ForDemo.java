@@ -6,7 +6,7 @@ public class ForDemo {
 		
 		Scanner scanner = new Scanner(System.in);
 		
-		int numOfStudents;
+		int numOfStudents = 0;
 		
 		System.out.println("학생 수를 입력하세요 :");
 		numOfStudents = scanner.nextInt();
@@ -17,7 +17,7 @@ public class ForDemo {
 			System.out.println(i+1+"번째 학생 점수 :");
 			score[i] = scanner.nextInt();
 		}
-		
+
 		for(int i = 0; i<score.length; i++) {
 			System.out.println(i+1+"번째 학생 점수 :"+score[i]);
 		}
