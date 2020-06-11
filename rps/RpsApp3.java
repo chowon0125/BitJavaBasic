@@ -2,6 +2,7 @@ package rps;
 import java.util.Scanner;
 import java.util.Random;
 public class RpsApp3 {
+	
 	public static void main(String[] args) {
 		
 		Scanner scanner = new Scanner(System.in);
@@ -9,10 +10,14 @@ public class RpsApp3 {
 		
 		while(true) {
 			System.out.println("<<메뉴>>");
-			System.out.println("0. 종료   1. 게임");
+			System.out.println("0. 종료   1. 게임   2. 통계");
 			switch(scanner.nextInt()){
 			case 0 : System.out.println("종료"); return;
 			case 1 : game(scanner, random);	break;
+			case 2 : System.out.println(
+						Calculate.playerWin+"승 "
+						+Calculate.draw+"무 "
+						+Calculate.cpuWin+"패"); break;
 			}	
 		}
 	}
@@ -46,23 +51,23 @@ public class RpsApp3 {
 		
 		if(playerI == 1) {
 			switch(cpuI){
-			case 1 : result = "무승부"; break;
-			case 2 : result = "패배"; break;
-			case 3 : result = "승리"; break;
+			case 1 : result = "무승부"; Calculate.draw++; break;
+			case 2 : result = "패배"; Calculate.cpuWin++; break;
+			case 3 : result = "승리"; Calculate.playerWin++; break;
 			}
 		}
 		else if(playerI == 2) {
 			switch(cpuI){
-			case 1 : result = "승리"; break;
-			case 2 : result = "무승부"; break;
-			case 3 : result = "패배"; break;
+			case 1 : result = "승리"; Calculate.playerWin++; break;
+			case 2 : result = "무승부"; Calculate.draw++; break;
+			case 3 : result = "패배"; Calculate.cpuWin++; break;
 			}
 		}
 		else if(playerI == 3) {
 			switch(cpuI){
-			case 1 : result = "패배"; break;
-			case 2 : result = "승리"; break;
-			case 3 : result = "무승부"; break;
+			case 1 : result = "패배"; Calculate.cpuWin++; break;
+			case 2 : result = "승리"; Calculate.playerWin++; break;
+			case 3 : result = "무승부"; Calculate.draw++; break;
 			}
 		}
 		else {
