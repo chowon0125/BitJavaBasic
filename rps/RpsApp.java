@@ -31,6 +31,8 @@ public class RpsApp {
 			System.out.println("<<오류!! 정확한 값을 입력하세요.>>");
 		}
 		
+		System.out.println("******************");
+		
 		cSelec = random.nextInt(3);
 		
 		if(cSelec == 0) {
