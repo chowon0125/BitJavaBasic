@@ -12,12 +12,13 @@ public class RpsApp3 {
 			System.out.println("<<메뉴>>");
 			System.out.println("0. 종료   1. 게임   2. 통계");
 			switch(scanner.nextInt()){
-			case 0 : System.out.println("종료"); return;
-			case 1 : game(scanner, random);	break;
-			case 2 : System.out.println(
-						Calculate.playerWin+"승 "
-						+Calculate.draw+"무 "
-						+Calculate.cpuWin+"패"); break;
+				case 0 : System.out.println("종료"); return;
+				case 1 : game(scanner, random);	break;
+				case 2 : System.out.println(
+							Calculate.playerWin+"승 "
+							+Calculate.draw+"무 "
+							+Calculate.cpuWin+"패"); break;
+				default : System.out.println("올바른 숫자를 입력하십시오."); break;
 			}	
 		}
 	}
