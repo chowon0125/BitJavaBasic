@@ -22,7 +22,8 @@ public class MemberApp {
 				member.setName(scanner.next());
 				
 				System.out.println(member.toString());
-			
+				
+				memberService.join(member);
 				break;
 			case 2 :  break;
 			default : System.out.println("메뉴 선택 오류"); break;
