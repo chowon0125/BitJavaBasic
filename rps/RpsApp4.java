@@ -13,7 +13,7 @@ public class RpsApp4 {
 			System.out.println("0.종료   1.게임");
 			switch(scanner.nextInt()) {
 			case 0 : System.out.println("*****종료*****"); return;
-			case 1 : game(scanner, random);
+			case 1 : game(scanner, random); break;
 			}
 		}
 	}
