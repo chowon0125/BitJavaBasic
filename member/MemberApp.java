@@ -57,15 +57,16 @@ public class MemberApp {
 				break;
 				
 			/*case 3 :
-				member = new Member();
+				member = new Member(); // member라는 인스턴스 변수 생성
 				System.out.println("비밀번호 변경");
 				System.out.println("아이디 :");
-				member.setUserid(scanner.next());
+				member.setUserid(scanner.next()); //방금 생성한 member변수에 셋유저아이디 메소드 호출(매개변수는 스캐너로 받는 형태)
 				System.out.println("비밀번호 :");
-				member.setPassword(scanner.next());
-				String logic = memberService.modifyPassword(member);
-				if(logic.equals("T")) {
-					this.member = member;
+				member.setPassword(scanner.next()); // 상동
+				String logic = memberService.modifyPassword(member); // 방금 값이 채워진 member 인스턴스 변수를 매개변수로 사용하여 패스워드변경 메소드 호출
+				if(logic.equals("T")) { //패스워드 변경 메소드 사용 결과 : logic 문자열 변수에 맞았으면 T, 틀렸으면 오류 메세지가 저장됨. 그걸 리턴으로 받아왔음.
+					// 해야 할일 : 만약, 로직 문자열이 T이면, member 변수에게 셋 패스워드 메소드 호출
+					 * 
 				}
 				break;
 			*/
