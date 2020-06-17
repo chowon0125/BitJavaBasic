@@ -44,9 +44,16 @@ public class MoneyUnit {
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
 		Money instance = new Money();
-		System.out.println("금액을 입력하세요.");
-		instance.calculate(scanner.nextInt());
-		instance.print();
+		while(true) {
+			System.out.println("0. 종료    1. 입력");
+			switch(scanner.nextInt()) {
+			case 0 : System.out.println("종료");return;
+			case 1 : 
+				System.out.println("금액을 입력하세요.");
+				instance.calculate(scanner.nextInt());
+				instance.print(); break;
+			}
+		}
 	}
 }
 
