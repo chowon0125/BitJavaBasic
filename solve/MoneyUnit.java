@@ -35,7 +35,7 @@ class Money{
 	
 	public void print() {
 		System.out.printf("****************************%n요청금액 : %d원%n5만원: %d매%n1만원: %d매%n5천원: %d매%n1천원: %d매%n"
-				+ "500원: %d개%n백원: %d개%n오십원: %d개%n십원: %d개%n****************************%n"
+				+ "5백원: %d개%n백원: %d개%n오십원: %d개%n십원: %d개%n****************************%n"
 				,money, result[0], result[1], result[2], result[3], result[4], result[5], result[6], result[7]);
 	}
 }
