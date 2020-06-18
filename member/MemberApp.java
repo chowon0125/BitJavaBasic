@@ -26,8 +26,8 @@ public class MemberApp {
 		MemberService memberService = new MemberServiceImpl();
 		while(true) {
 			System.out.println("< < 메 뉴 > >");
-			System.out.println("0. 종료   1. 회원가입   2. 로그인 "
-					+ "5. 아이디존재  7. 회원목록");
+			System.out.println("0. 종료   1. 회원가입   2. 로그인  3. 회원목록  4. 중복체크  5. 비번수정  6. 회원탈퇴  "
+					+ "7. 아이디 검색  8. 이름 검색  9. 전체 회원수");
 			switch(scanner.nextInt()) {
 			case 0 : 
 				System.out.println("시스템 종료"); return; 
@@ -56,24 +56,14 @@ public class MemberApp {
 				System.out.println(result);
 				break;
 				
-			/*case 3 :
-				member = new Member(); // member라는 인스턴스 변수 생성
-				System.out.println("비밀번호 변경");
-				System.out.println("아이디 :");
-				member.setUserid(scanner.next()); //방금 생성한 member변수에 셋유저아이디 메소드 호출(매개변수는 스캐너로 받는 형태)
-				System.out.println("비밀번호 :");
-				member.setPassword(scanner.next()); // 상동
-				String logic = memberService.modifyPassword(member); // 방금 값이 채워진 member 인스턴스 변수를 매개변수로 사용하여 패스워드변경 메소드 호출
-				if(logic.equals("T")) { //패스워드 변경 메소드 사용 결과 : logic 문자열 변수에 맞았으면 T, 틀렸으면 오류 메세지가 저장됨. 그걸 리턴으로 받아왔음.
-					// 해야 할일 : 만약, 로직 문자열이 T이면, member 변수에게 셋 패스워드 메소드 호출
-					 * 
-				}
+			case 3 :
+				System.out.println("목록보기");
+				Member[] list = memberService.list();
+				for(int i = 0; i < 3; i++) {System.out.println(list[i]);}
 				break;
-			*/
-				
-				
-				
-			case 5 :
+			
+			
+			case 4 : 
 				member = new Member();
 				System.out.println("아이디 체크");
 				System.out.println("아이디 :");
@@ -82,15 +72,40 @@ public class MemberApp {
 				System.out.println(result);
 				break;
 				
-			case 7 : 
-				System.out.println("목록보기");
-				Member[] list = memberService.list();
-				for(int i = 0; i < 3; i++) {
-					System.out.println(list[i]);
-				}
+				
+			case 5 :
+				member = new Member();
+				System.out.println("비밀번호 변경");
+				System.out.println("아이디 :");
+				member.setUserid(scanner.next());
+				System.out.println("비밀번호 :");
+				member.setPassword(scanner.next());
+				memberService.changePassword(member);
+				break;
+			
+			case 6 : 
+				member = new Member();
+				System.out.println("회원 탈퇴");
+				System.out.println("아이디 :");
+				member.setUserid(scanner.next());
+				System.out.println("비밀번호 :");
+				member.setPassword(scanner.next());
+				memberService.withdrawal(member);
 				break;
 				
+			case 7 : 
+				
+				break;
+			
+			case 8 : break;
+				
+			case 9 : break;
+			
+			case 10 : break;
+				
 			default : System.out.println("메뉴 선택 오류"); break;
+			
+			
 			
 			}
 		}

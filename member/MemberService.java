@@ -6,4 +6,9 @@ public interface MemberService {
 	public String idCheck(Member member);
 	// public String modifyPassword(Member member);
 	public Member[] list();
+	public void changePassword(Member member);
+	public void withdrawal(Member member);
+	public Member idfind(String id);
+	public Member[] namefind(String name);
+	int count();
 }
