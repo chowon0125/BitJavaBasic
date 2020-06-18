@@ -24,6 +24,7 @@ public class MemberApp {
 		Scanner scanner = new Scanner(System.in);
 		Member member = null;
 		MemberService memberService = new MemberServiceImpl();
+		boolean loginCheck = false;
 		while(true) {
 			System.out.println("< < 메 뉴 > >");
 			System.out.println("0. 종료   1. 회원가입   2. 로그인  3. 회원목록  4. 중복체크  5. 비번수정  6. 회원탈퇴  "
@@ -46,16 +47,17 @@ public class MemberApp {
 				break;
 				
 			case 2 :  
-				member = new Member();
-				System.out.println("로그인");
-				System.out.println("아이디 :");
-				member.setUserid(scanner.next());
-				System.out.println("비밀번호 :");
-				member.setPassword(scanner.next());
-				String result = memberService.login(member);
-				System.out.println(result);
+				if(loginCheck) {System.out.println("이미 로그인중입니다.");}
+				else {
+					member = new Member();
+					System.out.println("로그인");
+					System.out.println("아이디 :");
+					member.setUserid(scanner.next());
+					System.out.println("비밀번호 :");
+					member.setPassword(scanner.next());
+					loginCheck = memberService.login(member);
+				}
 				break;
-				
 			case 3 :
 				System.out.println("목록보기");
 				Member[] list = memberService.list();
@@ -68,45 +70,43 @@ public class MemberApp {
 				System.out.println("아이디 체크");
 				System.out.println("아이디 :");
 				member.setUserid(scanner.next());
-				result = memberService.idCheck(member);
-				System.out.println(result);
+				memberService.idCheck(member);
 				break;
 				
 				
 			case 5 :
-				member = new Member();
-				System.out.println("비밀번호 변경");
-				System.out.println("아이디 :");
-				member.setUserid(scanner.next());
-				System.out.println("비밀번호 :");
-				member.setPassword(scanner.next());
-				memberService.changePassword(member);
+				if(loginCheck) {
+					member = new Member();
+					System.out.println("비밀번호 변경");
+					System.out.println("아이디 :");
+					member.setUserid(scanner.next());
+					System.out.println("변경할 비밀번호 :");
+					member.setPassword(scanner.next());
+					memberService.changePassword(member);
+				}
+				else {System.out.println("먼저 로그인을 해주세요.");}
 				break;
 			
 			case 6 : 
-				member = new Member();
-				System.out.println("회원 탈퇴");
-				System.out.println("아이디 :");
-				member.setUserid(scanner.next());
-				System.out.println("비밀번호 :");
-				member.setPassword(scanner.next());
-				memberService.withdrawal(member);
+				if(loginCheck) {
+					member = new Member();
+					System.out.println("회원 탈퇴");
+					System.out.println("아이디 :");
+					member.setUserid(scanner.next());
+					System.out.println("비밀번호 :");
+					member.setPassword(scanner.next());
+					memberService.withdrawal(member);
+				}
+				else {System.out.println("로그인 먼저 해주세요.");}
 				break;
 				
-			case 7 : 
-				
-				break;
+			case 7 : break;
 			
 			case 8 : break;
 				
-			case 9 : break;
-			
-			case 10 : break;
+			case 9 : System.out.printf("현재 총 회원수는 %d명 입니다.%n",memberService.count());break;
 				
 			default : System.out.println("메뉴 선택 오류"); break;
-			
-			
-			
 			}
 		}
 	}
