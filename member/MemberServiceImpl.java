@@ -60,38 +60,54 @@ public class MemberServiceImpl implements MemberService {
 		}
 	}
 	// 6. 회원탈퇴
-	public void withdrawal(Member member) {
-		boolean check = false;
-		int index = 0;
+	public String withdrawal(Member member) {
+		String result = "탈퇴 실패";
 		for(int i=0; i< count; i++) {
 			if(member.getUserid().equals(members[i].getUserid())
-					&&
-				member.getPassword().equals(members[i].getPassword())) {
-				check = true;
-				index = i;
+					&&member.getPassword().equals(members[i].getPassword())) {
+				members[i] = members[count-1];
+				members[count-1] = null;
+				count --;
+				result = "탈퇴 성공";
+				break;
 			}
 		}
-		if(check) {
-			members[index] = null;
-			System.out.println("탈퇴가 완료되었습니다.");
-		}
-		else {System.out.println("아이디나 비밀번호를 확인해주세요.");}
+		return result;
 	}
 	// 7. 아이디검색
-	public Member idfind(String id) {
-		return null;
+	public Member idSearch(String id) {
+		Member member = new Member();
+		for(int i=0; i<members.length; i++) {
+			if(id.equals(members[i].getUserid())) {
+				member = members[i]; break;
+			}
+		}
+		return member;
 	}
 	// 8. 이름 검색(동명이인 처리필요)
-	public Member[] namefind(String name) {
+	public Member[] nameSearch(String name) {
 		int cnt = 0; // 동명이인의 수
-		Member[] temp = new Member[cnt];
-		return null;
+		for(int i=0; i<members.length; i++) {
+			if(name.equals(members[i].getName())) {
+				cnt++;
+			}
+		}
+		Member[] searchMembers = new Member[cnt];
+		int k = 0;
+		for(int i = 0; i<members.length; i++) {
+			if(name.equals(members[i].getName())) {
+				searchMembers[k] = members[i];
+				k++;
+				if(k == cnt) break;
+			}
+		}
+		return searchMembers;
 	}
 	// 9. 전체 회원수
 	public int count() {
 		return count;
 	}
-
+	
 	
 	
 }

@@ -7,8 +7,8 @@ public interface MemberService {
 	// public String modifyPassword(Member member);
 	public Member[] list();
 	public void changePassword(Member member);
-	public void withdrawal(Member member);
-	public Member idfind(String id);
-	public Member[] namefind(String name);
+	public String withdrawal(Member member);
+	public Member idSearch(String id);
+	public Member[] nameSearch(String name);
 	int count();
 }
