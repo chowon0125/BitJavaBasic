@@ -22,9 +22,8 @@ m2.hello(); // 안녕하세요 스패설멤버홍길동입니다
 
 class Member{
 	
-	protected String name;
-	protected int grade;
-	Member(){}
+	private String name;
+	private int grade;
 	Member(String name){
 		this.name = name;
 	}
@@ -41,14 +40,14 @@ class Member{
 class SpecialMember2 extends Member{
 	private int specialPoint;
 	public SpecialMember2(String name) {
-		super.name = name;
+		super(name);
 	}
 
 	public int getSpecialPoint() {return specialPoint;}
 	public void setSpecialPoint(int specialPoint) {this.specialPoint = specialPoint;}
 	
 	public void hello() {
-		System.out.printf("안녕하세요 스페셜멤버 %s입니다.%n" , super.name);
+		System.out.printf("안녕하세요 스페셜멤버 %s입니다.%n" , getName());
 	}
 }
 
