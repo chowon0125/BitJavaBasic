@@ -33,7 +33,7 @@ class Student2 extends Person{
 	Student2(String name, String gender){
 		super(name, gender);
 	}
-	public void hello() {System.out.printf("안녕하세요 취미가 %s인 %s입니다.%n",getHobby().getName(), getName());}
+	public void hello() {System.out.printf("안녕하세요 취미가 %s인 %s입니다.%n",super.getHobby().getName(), super.getName());}
 }
 
 class Hobby{
