@@ -139,27 +139,31 @@ class CarService{
 	public void searchCustomer() {
 		for(int i=0; i<cusIndex; i++) {
 			System.out.printf("고객 번호 : %d%n고객 이름 : %s%n",customerList[i].getCusNumber(),customerList[i].getName());
+			if(customerList[i].getCar() == null) {System.out.println("소유중인 차량 : 없음");}
+			else {System.out.printf("소요중인 차량 : 차량번호 %d번%n",(customerList[i].getCar()).getCarNumber());}
 			System.out.println("--------------------------------");
 		}
 	}	
 	public void sellCar(int cusNum, int carNum) {
 		Car car = null;
 		Customer cus = null;
+		int cusI = 0;
 		
 		for(int i=0; i<cusIndex; i++) {
 			if(cusNum == customerList[i].getCusNumber()) {
-				cus = customerList[i];
+				cus = customerList[i]; cusI = i; break;
 			}
 		}
 		for(int i=0; i<carIndex; i++) {
 			if(carNum == carList[i].getCarNumber()) {
-				car = carList[i];
+				car = carList[i]; break;
 			}
 		}
 		if( cus != null && car != null){
 			if(cus.getCar()!=null){System.out.println("이미 등록된 차량이 있습니다.");}
 			else{
 				cus.setCar(car);
+				customerList[cusI] = cus;
 				System.out.printf("%s 고객님에게 %d번 차량 판매 완료.%n",cus.getName(), car.getCarNumber());
 				}
 		}
