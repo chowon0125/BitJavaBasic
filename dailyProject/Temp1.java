@@ -1,13 +1,13 @@
 package dailyProject;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Scanner;
 
 class Notice {
-	
 	String notice;
 	String writer = "관리자";
 	String date;
-
 }
 
 class Review {
@@ -107,7 +107,7 @@ class AdminServiceImpl implements AdminService{
 		System.out.println("[상품리뷰]");
 		for (int i = 0; i < product.reviewIdx; i++) {
 			System.out.printf("[no.%d]  ", product.reviewIdx - i);
-			System.out.printf("[%s / 작성자 %s / 작성일%s]%n", (product.review[product.reviewIdx - 1 - i]).review,
+			System.out.printf("[%s / 작성자 : %s / 작성일 (%s)]%n", (product.review[product.reviewIdx - 1 - i]).review,
 					(product.review[product.reviewIdx - 1 - i]).writer,
 					(product.review[product.reviewIdx - 1 - i]).date);
 		}
@@ -119,6 +119,8 @@ public class Temp1 {
 
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
+		SimpleDateFormat currentDate = new SimpleDateFormat("MM/dd/HH:mm");
+		Calendar cal = Calendar.getInstance();
 		Notice notice = new Notice();
 		Review review = new Review();
 		Product shirt1 = new Product();
@@ -126,18 +128,14 @@ public class Temp1 {
 
 		String writer = "abc";
 		String writer2 = "cde";
-		String date = "0629";
+		String date = currentDate.format(cal.getTime());
 		String date2 = "0630";
 		System.out.println("리뷰입력");
-		admin.writeReview(review, scanner.next(), writer, date);
+		admin.writeReview(review, scanner.nextLine(), writer, date);
 		admin.insertReview(shirt1, review);
-
-		Review review2 = new Review();
-		System.out.println("리뷰입력");
-		admin.writeReview(review2, scanner.next(), writer2, date2);
-		admin.insertReview(shirt1, review2);
-
 		admin.printReview(shirt1);
+		
+		System.out.println(notice.writer);
 
 	}
 
