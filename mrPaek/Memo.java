@@ -20,7 +20,5 @@ public class Memo {
 				sum[i] += score[i][j];
 			}
 		}	
-		
-		
 	}
 }
